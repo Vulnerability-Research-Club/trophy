@@ -29,10 +29,10 @@ def notify_trophy(team_name, category, count):
     Send a Discord notification with an image for the given trophy event.
     Uses multipart/form-data POST (mimicking the provided curl command).
 
-    team_name: team name (from JSON filename, uppercase)
-    category: one of the following:
-              "auditing", "fuzzing", "implementation", "report", "cve", "submissions", "crash"
-    count: count of the entity (must be > 0)
+    team_name: team name (derived from JSON filename, uppercase)
+    category: one of:
+       "auditing", "fuzzing", "implementation", "report", "cve", "submissions", "crash"
+    count: the rank or count for the entity (must be > 0)
     """
     if count <= 0:
         return
@@ -197,26 +197,16 @@ def process_json_file(conn, file_path):
                     )
                     conn.commit()
             sync_section(conn, team_id, "reporting_reports", ("link",), json_reports)
-            c.execute("SELECT COUNT(*) FROM reporting_reports WHERE team_id = ?", (team_id,))
-            report_count = c.fetchone()[0]
-            milestones = []
-            if report_count >= 1:
-                milestones.append(1)
-            m = 5
-            while m <= report_count:
-                milestones.append(m)
-                m += 5
-            c.execute("DELETE FROM reporting_report_milestones WHERE team_id = ? AND milestone > ?", (team_id, report_count))
-            conn.commit()
-            for milestone in milestones:
-                c.execute("SELECT id FROM reporting_report_milestones WHERE team_id = ? AND milestone = ?", (team_id, milestone))
-                if not c.fetchone():
-                    c.execute(
-                        "INSERT INTO reporting_report_milestones (team_id, milestone, notified) VALUES (?, ?, ?)",
-                        (team_id, milestone, 1)
-                    )
-                    conn.commit()
-                    notify_trophy(team_name, "report", milestone)
+            # For each new report entry, notify individually.
+            c.execute("SELECT id FROM reporting_reports WHERE team_id = ? AND notified = 0 ORDER BY id", (team_id,))
+            new_report_rows = c.fetchall()
+            for row in new_report_rows:
+                new_report_id = row[0]
+                c.execute("SELECT COUNT(*) FROM reporting_reports WHERE team_id = ? AND id <= ?", (team_id, new_report_id))
+                rank = c.fetchone()[0]
+                notify_trophy(team_name, "report", rank)
+                c.execute("UPDATE reporting_reports SET notified = 1 WHERE id = ?", (new_report_id,))
+                conn.commit()
 
         # Process CVE entries.
         if "cve" in reporting:
@@ -232,7 +222,6 @@ def process_json_file(conn, file_path):
                     )
                     conn.commit()
             sync_section(conn, team_id, "reporting_cves", ("link",), json_cves)
-            # Notify for each new CVE individually.
             c.execute("SELECT id FROM reporting_cves WHERE team_id = ? AND notified = 0 ORDER BY id", (team_id,))
             new_cve_rows = c.fetchall()
             for row in new_cve_rows:
