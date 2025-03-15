@@ -20,6 +20,9 @@ $ git push
 
 본 JSON 형식은 **구현(Implementation), 퍼징(Fuzzing), 감시(Auditing), 보고(Reporting), 제출(Submissions)** 등의 **보안 연구 활동을 기록하기 위해** 설계되었습니다.  
 
+```
+주의사항: 각 엔트리 별 name으로 표시된 부분은 내용이 unique해야 함. 해당 name이 DB내에서 key로 사용되기 때문임
+```
 
 ## 1. Implementation (구현)  
 
