@@ -1,6 +1,12 @@
 {
   "implementation": {
-    "product": []
+    "product": [
+      {
+        "name": "Product Alpha",
+        "description": "Initial security tool",
+        "version": "0.1"
+      }
+    ]
   },
   "fuzzing": {
     "fuzzer": []
