@@ -1,0 +1,13 @@
+#!/bin/sh
+# Run the process_json.py script
+python .github/process_json.py
+
+# Check if the result.db file has changes
+if ! git diff --quiet proj/result.db; then
+    echo "Detected changes in proj/result.db. Committing updated DB file."
+    git add proj/result.db
+    git commit -m "Update result.db"
+else
+    echo "No changes detected in proj/result.db."
+fi
+
