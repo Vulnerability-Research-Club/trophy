@@ -10,6 +10,11 @@
         "name": "Product Alpha2",
         "description": "Initial security tool",
         "version": "0.1"
+      },
+      {
+        "name": "Product Alpha3",
+        "description": "Initial security tool",
+        "version": "0.1"
       }
     ]
   },
