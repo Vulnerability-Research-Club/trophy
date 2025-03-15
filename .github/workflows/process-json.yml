@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'proj/result.db'  # Ignore changes to result.db so it doesn't trigger another run
 
 jobs:
   process-json:
@@ -24,3 +26,13 @@ jobs:
       - name: Run process_json.py
         run: python .github/process_json.py
 
+      - name: Commit updated DB file
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add proj/result.db
+          # Only commit if result.db has changed
+          git diff-index --quiet HEAD || git commit -m "Update result.db"
+
+      - name: Push changes
+        run: git push
