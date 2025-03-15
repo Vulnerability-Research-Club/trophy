@@ -15,11 +15,34 @@
         "name": "Product Alpha3",
         "description": "Initial security tool",
         "version": "0.1"
+      },
+      {
+        "name": "Product Alpha4",
+        "description": "Initial security tool",
+        "version": "0.1"
+      },
+      {
+        "name": "Product Alpha5",
+        "description": "Initial security tool",
+        "version": "0.1"
       }
     ]
   },
   "fuzzing": {
-    "fuzzer": []
+    "fuzzer": [
+      {
+        "name": "FuzzerOne",
+        "target": "Web Parser",
+        "description": "Basic fuzzer",
+        "status": "in-progress"
+      },
+      {
+        "name": "FuzzerOne2",
+        "target": "Web Parser",
+        "description": "Basic fuzzer",
+        "status": "in-progress"
+      }
+    ]
   },
   "auditing": {
     "target": {}
