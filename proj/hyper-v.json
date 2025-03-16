@@ -1,6 +1,12 @@
 {
   "implementation": {
-    "product": []
+    "product": [
+      {
+        "name": "fuzzer_v1",
+        "description": "description",
+        "version": "v1.0"
+      }
+    ]
   },
   "fuzzing": {
     "fuzzer": []
