@@ -1,7 +1,28 @@
+# 프로젝트 실적 기록방법
+
+```sh
+# 최초 본인 Local git repository에 config 수행
+$ ./setup-hook.sh
+
+# 본인 팀 json 팀 파일 수정
+$ vi win-gpu.json
+...
+
+# add + commit + push
+$ git add *
+$ git commit -m "YOUR MESSAGE"
+$ git push
+
+# push할때 자동으로 스크립트를 실행함
+```
+
 # 연구 진행사항 JSON Specification
 
 본 JSON 형식은 **구현(Implementation), 퍼징(Fuzzing), 감시(Auditing), 보고(Reporting), 제출(Submissions)** 등의 **보안 연구 활동을 기록하기 위해** 설계되었습니다.  
 
+```
+주의사항: 각 엔트리 별 name으로 표시된 부분은 내용이 unique해야 함. 해당 name이 DB내에서 key로 사용되기 때문임
+```
 
 ## 1. Implementation (구현)  
 
