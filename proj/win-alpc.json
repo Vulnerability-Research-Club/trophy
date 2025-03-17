@@ -3,7 +3,14 @@
     "product": []
   },
   "fuzzing": {
-    "fuzzer": []
+    "fuzzer": [
+      {
+        "name": "pdc-fuzzer1",
+        "target": "Power Dependency Coordinator Driver",
+        "description": "Fuzzing pdc's alpc port message",
+        "status": "in-progress"
+      }
+    ]
   },
   "auditing": {
     "target": {}
