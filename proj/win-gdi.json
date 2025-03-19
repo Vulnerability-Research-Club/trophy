@@ -3,7 +3,14 @@
     "product": []
   },
   "fuzzing": {
-    "fuzzer": []
+    "fuzzer": [
+      {
+      "name": "WinAFL",
+      "target": "Windows GDI",
+      "description": "Fuzzing GetThumbnailImage method",
+      "status": "in-progress"
+    }
+  ]
   },
   "auditing": {
     "target": {}
