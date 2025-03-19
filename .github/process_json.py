@@ -169,10 +169,10 @@ def process_json_file(conn, file_path):
         crash_count = reporting.get("num_accumulated_crash", 0)
         if crash_count > 0:
             milestones = []
-            m = 10
+            m = 0 
             while m <= crash_count:
                 milestones.append(m)
-                m += 10
+                m += 1
             for milestone in milestones:
                 c.execute("SELECT id FROM reporting_crash_milestones WHERE team_id = ? AND milestone = ?", (team_id, milestone))
                 if not c.fetchone():
