@@ -28,10 +28,28 @@
     ]
   },
   "auditing": {
-    "target": {
-      "name": "Web Application Security",
-      "status": "in-progress"
-    }
+    "targets": [
+      {
+        "name": "FontBase",
+        "status": "in-progress"
+      },
+      {
+        "name": "Notepad++",
+        "status": "in-progress"
+      },
+      {
+        "name": "Ms Office application",
+        "status": "in-progress"
+      },
+      {
+        "name" : "Azure CLI",
+        "status" : "in-progress"
+      },
+      {
+        "name" : "Adobe Acrobat",
+        "status" : "in-progress"
+      }
+    ]
   },
   "reporting": {
     "num_accumulated_crash": 15,
