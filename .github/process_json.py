@@ -144,22 +144,28 @@ def process_json_file(conn, file_path):
         sync_section(conn, team_id, "fuzzing_fuzzers", ("name", "target"), json_fuzzers)
 
     # --- Auditing: Process target ---
-    if "auditing" in data and "target" in data["auditing"]:
-        target_data = data["auditing"]["target"]
-        name = target_data.get("name", "").strip()
-        status = target_data.get("status")
-        if name:
-            c.execute("SELECT id FROM auditing_targets WHERE team_id = ? AND name = ?", (team_id, name))
-            if not c.fetchone():
-                c.execute(
-                    "INSERT INTO auditing_targets (team_id, name, status, notified) VALUES (?, ?, ?, ?)",
-                    (team_id, name, status, 0)
-                )
-                conn.commit()
-                notify_trophy(team_name, "auditing", 1)
-        else:
-            c.execute("DELETE FROM auditing_targets WHERE team_id = ?", (team_id,))
-            conn.commit()
+    if "auditing" in data and "targets" in data["auditing"]:
+        json_targets = data["auditing"]["targets"]
+        for target in json_targets:
+            name = target.get("name", "").strip()
+            status = target.get("status", "").strip()
+            if name:
+                c.execute("SELECT id FROM auditing_targets WHERE team_id = ? AND name = ?", (team_id, name))
+                if not c.fetchone():
+                    c.execute("""
+                        INSERT INTO auditing_targets (team_id, name, status, notified)
+                        VALUES (?, ?, ?, ?)
+                    """, (team_id, name, status, 0))
+                    conn.commit()
+                    c.execute("SELECT COUNT(*) FROM auditing_targets WHERE team_id = ?", (team_id,))
+                    count = c.fetchone()[0]
+                    # You can notify trophy here if you want separate notifications per target, for example:
+                    notify_trophy(team_name, "auditing", count)
+                    #print(team_name, "auditing", count)
+
+        # Optionally, remove targets from the database that no longer appear in JSON:
+        sync_section(conn, team_id, "auditing_targets", ("name",), json_targets)
+
 
     # --- Reporting: Process crash milestones, report entries and CVEs ---
     if "reporting" in data:
@@ -169,7 +175,7 @@ def process_json_file(conn, file_path):
         crash_count = reporting.get("num_accumulated_crash", 0)
         if crash_count > 0:
             milestones = []
-            m = 0 
+            m = 0
             while m <= crash_count:
                 milestones.append(m)
                 m += 1
