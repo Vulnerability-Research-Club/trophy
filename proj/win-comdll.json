@@ -6,7 +6,26 @@
     "fuzzer": []
   },
   "auditing": {
-    "target": {}
+    "target": {
+    	"name": "FontBase",
+      	"status": "in-progress"
+    },
+    "target": {
+	"name": "Notepad++",
+      	"status": "in-progress"
+    },
+    "target":{
+    	"name": "Ms Office application",
+      	"status": "in-progress"
+    },
+    "target": {
+	"name" : "Azure CLI",
+	"status" : "in-progerss"
+    },
+    "target": {
+        "name" : "Adobe Acrobat",
+        "status" : "in-progerss"
+   }
   },
   "reporting": {
     "num_accumulated_crash": 0,
