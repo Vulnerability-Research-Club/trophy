@@ -31,7 +31,12 @@
   },
   "reporting": {
     "num_accumulated_crash": 0,
-    "report": [],
+    "report": [
+      {
+        "link": "https://www.notion.so/Notepad-1bd7250049e9807eb1b4f42ce08fd7ea?pvs=4",
+        "description": "Notepad++ RCE using DLL Hijacking"
+      }
+    ],
     "cve": []
   },
   "submissions": {
