@@ -3,7 +3,14 @@
     "product": []
   },
   "fuzzing": {
-    "fuzzer": []
+    "fuzzer": [
+      {
+        "name": "yasm fuzzing",
+        "target": "yasm (in the webkit)",
+        "description": "afl++ fuzzing",
+        "status": "in-progress"
+      }
+    ]
   },
   "auditing": {
     "target": {}
