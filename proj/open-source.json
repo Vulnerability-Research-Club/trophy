@@ -7,7 +7,7 @@
       {
         "name": "yasm fuzzing",
         "target": "yasm (in the webkit)",
-        "description": "afl++ fuzzing",
+        "description": "application fuzzing using afl++",
         "status": "in-progress"
       }
     ]
