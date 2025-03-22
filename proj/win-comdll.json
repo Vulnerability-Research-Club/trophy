@@ -26,6 +26,10 @@
       {
         "name" : "Adobe Acrobat",
         "status" : "in-progress"
+      },
+      {
+	"name" : "Samsung Software",
+       	"status" : "in-progress"	
       }
     ]
   },
