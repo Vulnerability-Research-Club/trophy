@@ -39,6 +39,10 @@
       {
         "link": "https://www.notion.so/Notepad-1bd7250049e9807eb1b4f42ce08fd7ea?pvs=4",
         "description": "Notepad++ RCE using DLL Hijacking"
+      },
+      {
+      	"link" : "https://www.notion.so/Samsung-Gear-iconx-manger-1c07250049e9808a9745c7a633964488?pvs=4",
+	"description" : "Samsung Gear IconX Manager RCE using DLL Hijacking"
       }
     ],
     "cve": []
