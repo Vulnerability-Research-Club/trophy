@@ -3,7 +3,14 @@
     "product": []
   },
   "fuzzing": {
-    "fuzzer": []
+    "fuzzer": [
+      {
+        "name": "HyperPill",
+        "target": "Windows Hyper-V",
+        "description": "Windows Hyper-V fuzzing by using HyperPill fuzzer",
+        "status": "in-progress"
+      }
+    ]
   },
   "auditing": {
     "target": {}
