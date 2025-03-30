@@ -7,13 +7,13 @@
 	  {
 	    "name": "Jackalope",
 		"target": "WebNN",
-		"description": "Windows Chrome WebNN fuzzing by using Jackalope fuzzer",
+		"description": "Windows Chrome WebNN fuzzing by using Jackalope fuzzer.",
 		"status": "in-progress"
 	  },
 	  { 
         "name": "Domato",
         "target": "WebNN",
-        "description": "Linux and MacOS Chrome WebNN fuzzing by using Domato fuzzer",
+        "description": "Linux and MacOS Chrome WebNN fuzzing by using Domato fuzzer.",
         "status": "in-progress"
       }
 	]
