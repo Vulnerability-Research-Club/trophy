@@ -19,10 +19,10 @@
 	]
   },
   "auditing": {
-    "target": [
+    "targets": [
 	  {
 	    "name": "Chromium WebNN",
-		"status": "in-progress"
+	    "status": "in-progress"
 	  }
 	]
   },
