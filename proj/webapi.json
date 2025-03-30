@@ -3,10 +3,28 @@
     "product": []
   },
   "fuzzing": {
-    "fuzzer": []
+    "fuzzer": [
+	  {
+	    "name": "Jackalope",
+		"target": "WebNN",
+		"description": "Windows Chrome WebNN fuzzing by using Jackalope fuzzer",
+		"status": "in-progress"
+	  },
+	  { 
+        "name": "Domato",
+        "target": "WebNN",
+        "description": "Linux and MacOS Chrome WebNN fuzzing by using Domato fuzzer",
+        "status": "in-progress"
+      }
+	]
   },
   "auditing": {
-    "target": {}
+    "target": [
+	  {
+	    "name": "Chromium WebNN",
+		"status": "in-progress"
+	  }
+	]
   },
   "reporting": {
     "num_accumulated_crash": 0,
