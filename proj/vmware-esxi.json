@@ -3,7 +3,14 @@
     "product": []
   },
   "fuzzing": {
-    "fuzzer": []
+    "fuzzer": [
+	{
+		"name":"Custom Fuzzer",
+		"target":"Type-2 hypervisor",
+		"description":"Type-2 hypervisor fuzzing",
+		"status":"in-progress"
+	}
+    ]
   },
   "auditing": {
     "target": {}
