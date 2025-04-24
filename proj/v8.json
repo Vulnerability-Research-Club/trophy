@@ -1,0 +1,28 @@
+{
+  "implementation": {
+    "product": []
+  },
+  "fuzzing": {
+    "fuzzer": [
+      {
+        "name": "fuzzilli",
+        "target": "v8",
+        "description": "start initial fuzzing",
+        "status": "in-progress"
+      }
+    ]
+  },
+  "auditing": {
+    "target": {}
+  },
+  "reporting": {
+    "num_accumulated_crash": 0,
+    "report": [],
+    "cve": []
+  },
+  "submissions": {
+    "conference": [],
+    "paper": []
+  }
+}
+
