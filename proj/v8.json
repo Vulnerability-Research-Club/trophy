@@ -6,7 +6,7 @@
     "fuzzer": [
       {
         "name": "fuzzilli",
-        "target": "SpiderMonkey",
+        "target": "FF SpiderMonkey",
         "description": "start initial fuzzing",
         "status": "in-progress"
       }
