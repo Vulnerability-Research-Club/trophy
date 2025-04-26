@@ -9,6 +9,12 @@
         "target": "yasm (in the webkit)",
         "description": "application fuzzing using afl++",
         "status": "in-progress"
+      },
+      {
+        "name": "ImageCaptureCore",
+        "target": "ImageCaptureCore",
+        "description": "library fuzzing using jackalope on mac m4",
+        "status": "in-progress"
       }
     ]
   },
