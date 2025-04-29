@@ -9,6 +9,12 @@
         "target":"Type-2 hypervisor",
         "description":"Type-2 hypervisor fuzzing",
         "status":"in-progress"
+      },
+      {
+        "name":"AFL++",
+        "target":"open-vm-tools",
+        "description":"fuzzing on copy-and-paste and drap-and-drop",
+        "status":"in-progress"
       }
     ]
   },
