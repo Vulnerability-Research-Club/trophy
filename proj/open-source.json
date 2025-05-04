@@ -28,7 +28,7 @@
     "target": {}
   },
   "reporting": {
-    "num_accumulated_crash": 3,
+    "num_accumulated_crash": 4,
     "report": [],
     "cve": []
   },
