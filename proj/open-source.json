@@ -29,7 +29,12 @@
   },
   "reporting": {
     "num_accumulated_crash": 4,
-    "report": [],
+    "report": [
+      {
+        "link": "report via e-mail",
+        "description": "tencent ncnn crash report"
+      }
+    ],
     "cve": []
   },
   "submissions": {
