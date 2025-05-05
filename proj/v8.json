@@ -16,8 +16,13 @@
     "target": {}
   },
   "reporting": {
-    "num_accumulated_crash": 0,
-    "report": [],
+    "num_accumulated_crash": 1,
+    "report": [
+      {
+        "link": "duplicate with 414962716",
+        "description": "crash report"
+      }
+    ],
     "cve": []
   },
   "submissions": {
