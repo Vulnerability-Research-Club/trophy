@@ -16,7 +16,7 @@
     "target": {}
   },
   "reporting": {
-    "num_accumulated_crash": 2,
+    "num_accumulated_crash": 3,
     "report": [
       {
         "link": "duplicate with 414962716",
