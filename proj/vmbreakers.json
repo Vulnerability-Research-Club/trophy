@@ -1,6 +1,6 @@
 {
   "implementation": {
-    "product": ["Virtualbox"]
+    "product": []
   },
   "fuzzing": {
     "fuzzer": [
