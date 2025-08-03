@@ -1,0 +1,32 @@
+{
+  "implementation": {
+    "product": ["Virtualbox"]
+  },
+  "fuzzing": {
+    "fuzzer": [
+      {
+        "name": "Custom fuzzer",
+        "target": "",
+        "description": "",
+        "status": "in-progress"
+      }
+    ]
+  },
+  "auditing": {
+    "target": {}
+  },
+  "reporting": {
+    "num_accumulated_crash": 4,
+    "report": [
+      {
+        "link": "https://www.zerodayinitiative.com",
+        "description": "One VM Escape, 2 vulnability"
+      }
+    ],
+    "cve": []
+  },
+  "submissions": {
+    "conference": [],
+    "paper": []
+  }
+}
